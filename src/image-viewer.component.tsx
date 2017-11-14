@@ -442,7 +442,7 @@ export default class ImageViewer extends React.Component<typings.PropsDefine, ty
                         onClick={this.handleClick.bind(this)}
                         onDoubleClick={this.handleDoubleClick.bind(this)}>
                         <Image style={Object.assign({}, this.styles.imageStyle, { width: width, height: height }, !!this.props.imageStyle ? this.props.imageStyle : null)}
-                            source={{ uri: image.url }} {...this.props.imageProps || null} />
+                            source={{ uri: image.url }} {...this.props.imageProps || null} resizeMode={"contain"} />
                     </ImageZoom>
                 )
             } else {
@@ -461,7 +461,7 @@ export default class ImageViewer extends React.Component<typings.PropsDefine, ty
                         return (
                             <Image key={index}
                                 style={Object.assign({}, this.styles.imageStyle, { width: width, height: height }, !!this.props.imageStyle ? this.props.imageStyle : null)}
-                                source={{ uri: image.url }} {...this.props.imageProps || null} />
+                                source={{ uri: image.url }} {...this.props.imageProps || null} resizeMode={"contain"} />
                         )
                     case 'fail':
                         return (
