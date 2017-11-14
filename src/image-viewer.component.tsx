@@ -440,9 +440,9 @@ export default class ImageViewer extends React.Component<typings.PropsDefine, ty
                         responderRelease={this.handleResponderRelease.bind(this)}
                         onLongPress={this.handleLongPress.bind(this, image)}
                         onClick={this.handleClick.bind(this)}
-                        onDoubleClick={this.handleDoubleClick.bind(this)}>Object.assign({}, o1, o2, o3);
-                        <Image style={Object.assign({}, this.styles.imageStyle, { width: width, height: height }, !!this.props.imageStyle ? this.props.imageStyle : null)}
-                            source={{ uri: image.url }}/>
+                        onDoubleClick={this.handleDoubleClick.bind(this)}>
+                        <Image style={Object.assign(this.styles.imageStyle, { width: width, height: height })}
+                            source={{ uri: image.url }}  {...this.props.imageProps || null} />
                     </ImageZoom>
                 )
             } else {
